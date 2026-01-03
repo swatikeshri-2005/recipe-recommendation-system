@@ -26,7 +26,7 @@ def generate_recipe(ingredients):
         temperature=0.7
     )
 
-return response.choices[0].message.content  # type: ignore # noqa: F706, F821
+    return response.choices[0].message.content  # type: ignore # noqa: F706, F821
 
 with st.form("recipe_form"):
     user_input = st.text_area(
@@ -45,4 +45,5 @@ if submit:
             recipe = generate_recipe(user_input)
             st.success("✅ Recipe Generated!")
             st.markdown(recipe)
+
 
